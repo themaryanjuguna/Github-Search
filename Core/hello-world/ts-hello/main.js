@@ -1,4 +1,13 @@
-var message; // type any 
-message = 'abc'; //any
-var endWithC = message.endsWith('c'); // tells the transpiller the type of a variable
-var alternativeWay = message.endsWith('c');
+var Point = /** @class */ (function () {
+    function Point() {
+    }
+    Point.prototype.draw = function () {
+        console.log('X: ' + this.x + ', Y: ' + this.y);
+    };
+    Point.prototype.getDistance = function (another) {
+        //...
+    };
+    return Point;
+}());
+var point;
+point.draw();
