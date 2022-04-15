@@ -1,4 +1,15 @@
-let message; // type any 
-message = 'abc' //any
-let endWithC = (<string>message).endsWith('c'); // tells the transpiller the type of a variable
-let alternativeWay = (message as string).endsWith('c');
+//arrow functions
+
+let log = function(message){
+    console.log(message);
+}
+
+//vs
+let doLog = (message) => {
+    console.log(message);
+}
+
+//also
+let doLog = (message) => console.log(message);
+let doLog = message => console.log(message);
+let doLog = () => console.log();
