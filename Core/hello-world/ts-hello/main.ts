@@ -1,4 +1,10 @@
-let drawPoint = (point: (x: number, y:number )) => {    //inline annotation
+interface Point {
+    x: number,
+    y: number
+}
+
+
+let drawPoint = (point: (point: Point) => {    //inline annotation
     //....
 }
 
