@@ -1,3 +1,8 @@
-let drawPoint = (x, y, a, b, c, d, e, f) => {
+let drawPoint = (point: (x: number, y:number )) => {    //inline annotation
     //....
 }
+
+drawPoint({
+    x: 1,
+    y: 2
+})
