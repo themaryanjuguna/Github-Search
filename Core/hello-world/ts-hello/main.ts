@@ -11,5 +11,5 @@ class Point {
     }
 }
 
-let point: Point = new Point();
+let point = new Point;
 point.draw();

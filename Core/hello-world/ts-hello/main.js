@@ -9,5 +9,5 @@ var Point = /** @class */ (function () {
     };
     return Point;
 }());
-var point;
+var point = new Point;
 point.draw();
