@@ -1,21 +1,13 @@
-interface Point {
-    x: number,
-    y: number
+class Point {
+    x: number;
+    y: number;
 
-    draw: () => void
+    draw() {
+        //...
+    }
+
+    getDistance(another: Point) {
+        //...
+    }
 }
 
-
-let drawPoint = (point: (point: Point) => {    //inline annotation
-    //....
-}
-
-
-let getDistance = (pointA: Point, PointB: Point) => {
-    // ...
-}
-
-drawPoint({
-    x: 1,
-    y: 2
-})
