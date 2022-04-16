@@ -6,9 +6,7 @@ class Point {
         console.log('X: ' + this.x + ', Y: ' + this.y);
     }
 
-    getDistance(another: Point) {
-        //...
-    }
+
 }
 
 let point = new Point;
