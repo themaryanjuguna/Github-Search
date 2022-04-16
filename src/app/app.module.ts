@@ -3,10 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GithubMainComponent } from './github-main/github-main.component';
+import { ReposComponent } from './repos/repos.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GithubMainComponent,
+    ReposComponent,
+    NavbarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
