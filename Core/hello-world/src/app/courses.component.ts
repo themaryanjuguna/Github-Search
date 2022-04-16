@@ -10,12 +10,9 @@ import { Component } from '@angular/core';
     {{ course }}
     </li>
     </ul>
-
     `
-
-
 })
 export class CoursesComponent {
     title = "List of courses";
-    courses = ["courses1", "courses2", "courses3"];
+    courses;
 }
