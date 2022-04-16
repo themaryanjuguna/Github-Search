@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     template: '<h2>{{ getTitle() }}</h2>'
 })
 export class CoursesComponent {
-    title = "List of courses";
+    title = "List of courses ";
 
     getTitle() {
         return this.title;
