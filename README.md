@@ -1,4 +1,14 @@
-# GITHUB
+# GITHUB Search
+
+
+## Description
+An Angular Project that enables the user to their enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories Objectives: Test my overall Angular skills using Dependency injection and connecting to httpclient
+
+## Behaviour Driven Development (BDD)
+ - users may enter a GitHub username into a form
+ - submit it
+ - and see their names descriptions of their public repositories. 
+ - They can also look for their repositories
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 
@@ -25,3 +35,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Author Details
+Maryanne Njuguna Find me on Twitter and Linkedin `@themaryanjuguna | Linktree Profile`(https://linktr.ee/themaryanjuguna)
