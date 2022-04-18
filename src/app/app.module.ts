@@ -10,6 +10,7 @@ import { ReposComponent } from './repos/repos.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailService } from '../app/github-service/detail.service';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { DetailService } from '../app/github-service/detail.service';
     GithubMainComponent,
     ReposComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UserProfileComponent
   ],
   
   imports: [

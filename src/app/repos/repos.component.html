@@ -4,12 +4,12 @@
 <section class="section">
 <div class="d-flex h-100 text-center text-black p-5 bg-white">
   <div class="row row-cols-1 row-cols-md-3 g-4" *ngIf="users">
-    <div class="col" *ngFor="let user of users |async">
+    <div class="col" *ngFor="let user of users | async">
       <div class="card h-100">
         <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text ">
-            {{ user.login }}
+          <h5 class="card-title">{{ user.login }}</h5>
+          <p class="card-text">
+            <a routerLink="/users/{{ user.login }}">{{ user.login }}</a>
             <!-- {{ details.username }}
             {{ details.fullname }}
             {{ details.description }}
