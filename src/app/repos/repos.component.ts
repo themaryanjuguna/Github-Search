@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Details } from '../github-class/details';
-import { NgForm } from '@angular/forms';
-
 
 
 @Component({

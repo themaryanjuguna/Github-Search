@@ -12,6 +12,11 @@ import { AlertService } from '../alert-service/alert.service';
 
 export class GithubMainComponent implements OnInit {
 
+
+  submitUsername() {
+    
+  }
+
   alertService:AlertService;
   details:Details;
 
