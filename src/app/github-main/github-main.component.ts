@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Details } from '../github-class/details';
+import { DetailService } from '../github-service/detail.service';
 import { AlertService } from '../alert-service/alert.service';
 
 @Component({
@@ -11,31 +12,30 @@ import { AlertService } from '../alert-service/alert.service';
 
 export class GithubMainComponent implements OnInit {
 
-  goals:Goal[];
   alertService:AlertService;
   details:Details;
 
-  constructor(goalService:GoalService, alertService:AlertService, private http:HttpClient) { 
-    this.goals = goalService.getGoals()
+  constructor(
+    detailService:DetailService, alertService:AlertService, private http:HttpClient) { 
+    this.details = detailService.getDetail()
     this.alertService = alertService;
    }
 
   ngOnInit(): void {
     interface ApiResponse{
       
-      name: string;
+      username: string;
       fullname: string;
       description: string;
-      updated:Date;
+      updated: Date;
       hyperlink: string;
       clonelink: string; 
-      language: string; 
-      created:Date;
+      created: Date;
     }
 
     this.http.get<ApiResponse>("https://api.github.com/users/defunkt").subscribe(data=>{
       // Succesful API request
-      this.user = new User(data.name, data.fullname, data.description, data.updated, data.hyperlink, data.clonelink, data.language, data.created)
+      this.details = new Details(data.username, data.fullname, data.description, data.updated, data.hyperlink, data.clonelink, data.created)
     })
   }
   

@@ -10,14 +10,16 @@
         <p class="lead mb-2">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
         <p class="lead">
             <div class="col-auto">
+              <form (ngSubmit)='submitUsername()' #gitForm='ngForm' name="gitForm">
                 <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
                 <div class="input-group">
                   <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Username">
                   <div href="#" class="input-group-text btn btn-lg btn-success fw-bold border-white bg-secondary">@
                   </div>
                 </div>
+              </form>
             </div>
-            
+            <app-repos *ngIf="showData" (toggleBack)="showUserInput($event)"></app-repos>
        
       </main>
 
