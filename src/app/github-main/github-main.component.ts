@@ -17,31 +17,12 @@ export class GithubMainComponent implements OnInit {
     
   }
 
-  alertService:AlertService;
-  details:Details;
 
-  constructor(
-    detailService:DetailService, alertService:AlertService, private http:HttpClient) { 
-    this.details = detailService.getDetail()
-    this.alertService = alertService;
-   }
+
+  constructor() { }
 
   ngOnInit(): void {
-    interface ApiResponse{
-      
-      username: string;
-      fullname: string;
-      description: string;
-      updated: Date;
-      hyperlink: string;
-      clonelink: string; 
-      created: Date;
-    }
-
-    this.http.get<ApiResponse>("https://api.github.com/users/defunkt").subscribe(data=>{
-      // Succesful API request
-      this.details = new Details(data.username, data.fullname, data.description, data.updated, data.hyperlink, data.clonelink, data.created)
-    })
+        
   }
   
 

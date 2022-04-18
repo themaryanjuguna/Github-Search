@@ -9,6 +9,8 @@ import { GithubMainComponent } from './github-main/github-main.component';
 import { ReposComponent } from './repos/repos.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DetailService } from '../app/github-service/detail.service';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppRoutingModule,
     HttpClientModule 
   ],
-  providers: [],
+  providers: [
+    DetailService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

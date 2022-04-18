@@ -1,15 +1,34 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DetailService {
-  getDetail(): import("../github-class/details").Details {
-    throw new Error('Method not implemented.');
+
+  apiUrl = 'https://api.github.com/users';
+
+  constructor(private http: HttpClient) {}
+
+
+
+  // get all users
+  getUsers() {
+
+    return this.http.get(`${this.apiUrl}?per_page=10`);
+
   }
 
 
+  // Get as single user by username
 
-  constructor() { }
+  getuser(username: string) {
+
+    return this.http.get(`${this.apiUrl}/$[username]`);
+
+  }
+
 }
+
+
+
+
