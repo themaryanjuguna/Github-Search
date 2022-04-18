@@ -1,6 +1,5 @@
+import { DetailService } from '../github-service/detail.service';
 import { Component, OnInit } from '@angular/core';
-import { Details } from '../github-class/details';
-
 
 @Component({
   selector: 'app-repos',
@@ -9,13 +8,18 @@ import { Details } from '../github-class/details';
 })
 export class ReposComponent implements OnInit {
 
-  details:Details[] = [
+  users: any;
 
-  ]
 
-  constructor() { }
+  constructor(private detailService: DetailService ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.users = this.detailService.getUsers();
+    
+ 
+
+
   }
 
 }
