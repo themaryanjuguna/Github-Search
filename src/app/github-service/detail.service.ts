@@ -5,6 +5,9 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class DetailService {
 
+  private SERVER_URL = "";
+  
+
   apiUrl = 'https://api.github.com/users';
 
   constructor(private http: HttpClient) {}
@@ -14,16 +17,23 @@ export class DetailService {
   // get all users
   getUsers() {
 
-    return this.http.get(`${this.apiUrl}?per_page=10`);
+    return this.http.get(`${this.apiUrl}?per_page=12`);
 
   }
 
 
   // Get as single user by username
 
-  getuser(username: string) {
+  getUser(_username: string) {
 
-    return this.http.get(`${this.apiUrl}/$[username]`);
+    return this.http.get('https://api.github.com/users/${username}');
+    
+
+  }
+
+  getRepos(_username: string) {
+
+    return this.http.get('https://api.github.com/users/${username}/repos');
 
   }
 

@@ -1,21 +1,20 @@
 <body class="d-flex vh-100 text-center text-white bg-dark">
     
-    <div class="cover-container d-flex w-100 h-100 p-2 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 vh-70 p-2 mx-auto flex-column">
       <header class="mb-auto">
   
       </header>
     
-      <main class="px-2">
+      <main class="px-5 col-lg-8 offset-md-2">
         <h1>Enter your GitHub Username.</h1>
-        <p class="lead mb-2">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+        <p class="lead mb-5">Enter your GitHub Username to view your GitHub Repositories</p>
         <p class="lead">
             <div class="col-auto">
               <form (ngSubmit)='submitUsername()' #gitForm='ngForm' name="gitForm">
                 <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Username">
-                  <button  class="input-group-text btn btn-lg btn-success fw-bold border-white bg-secondary" type="submit">@
-                  </button>
+                  <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Please Enter your GitHub Username" autocomplete="off">
+                  <button  class="input-group-text btn btn-lg btn-success fw-bold border-white bg-secondary" type="submit">@</button>
                 </div>
               </form>
             

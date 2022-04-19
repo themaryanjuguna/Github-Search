@@ -1,1 +1,15 @@
-<p>user-profile works!</p>
+<section>
+    <div class="container-fluid">
+        <div class="col-lg-4 m-5 p-5 fs-3 text-white bg-dark">
+            works!
+
+        <div *ngIf="user">
+            <img [src]="user.avatar_url" alt="github avatar">
+            <h2>{{ user.login }}</h2> 
+        </div>
+            </div>
+</div>
+</section>
+{{ user | json }}
+
+
