@@ -1,14 +1,50 @@
 
+
  <section>
+     <div class="d-flex h-100 text-center text-white bg-dark">
+        <div class="cover-container d-flex w-100 h-100 p-5 mx-auto flex-column">
+                  
+          <main class="p-3">
+            <div class="col mx-auto">
+                <a href="/github-main" routerLink="/github-main" class="d-flex align-middle mx-5 mb-lg-0 text-white text-center text-decoration-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-github align-middle" viewBox="0 0 16 16">
+                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                </a>
+            </div>
+            <h1>Enter your GitHub Username.</h1>
+            <p class="lead"> Enter your GitHub Username to view your GitHub Repositories.</p>
+            <div class="grid">
+                  <div class="g-col-6 g-col-md-4 px-5 w-50">
+                    <div>
+                        <form form action="" (ngSubmit)="findprofile()" class="search-form" autocomplete="off"> 
+                          <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+                          <div class="input-group">
+                            
+                            <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Please Enter your GitHub Username" autocomplete="off">
+                            <button  class="input-group-text btn btn-lg btn-success fw-bold border-white bg-secondary" type="submit">@</button>
+                          </div>
+                        </form>            
+                    </div>
+                </div>
+              </div>          
+         </main>
+        </div>
+ 
+     </div>    
+        
+ </section>
+ 
+ <!-- <section>
     <div class="col-md-6 offset-md-5">
-        <form action="" class="search-form" autocomplete="off">
+        <form action="" (ngSubmit)="findprofile()" class="search-form" autocomplete="off">
             <div class="formgroup">
                 <input type="text" class="form-control" placeholder="Search git users with github" [(ngModel)] = "username" name="username" (keyup)="findprofile()">
             </div>
         </form>
     </div>
     
-</section> 
+ </section> 
 
 <section>
      <div class="container-fluid">
@@ -51,7 +87,7 @@
 
         </div>
     </div>
-</section>  
+</section>
 
 <section>
     <div class="panel panel-default">
@@ -63,9 +99,16 @@
                 <p>
                     {{ repo.name }} <a href="{{ repo.html_url}}" target="_blank" class="btn btn-sm btn-danger">View this project on GitHub</a><br>
 
-                    {{ repo.description}}
+                    {{ repo.description }}
                 </p>
             </div>
         </div>
     </div>
-</section> 
+</section>
+
+<section>
+    <footer class="mt-auto text-white-50">
+        <p>About the Developer <a href="https://linktr.ee/themaryanjuguna" class="text-white">Maryanne Njuguna</a>, by <a href="https://twitter.com/themaryanjuguna" class="text-white">themaryanjuguna</a>.</p>
+    </footer>
+    </div>    
+</section>   -->

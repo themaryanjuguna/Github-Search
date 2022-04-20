@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../service/profile.service';
 
-//import {Repos} from '../repo';
-//import {user} from '../user';
-
 
 
 @Component({
@@ -13,7 +10,7 @@ import { ProfileService } from '../service/profile.service';
 })
 export class GitProfileComponent implements OnInit {
 
-  profile: any[] = [];
+  profile: any;
   repos: any[] = [];
   username!: string;
 
@@ -24,17 +21,23 @@ export class GitProfileComponent implements OnInit {
   findprofile() {
     this.profileService.updateProfile(this.username);
     this.profileService.getProfile().subscribe((profile: any) =>{
-      console.log(profile);
       this.profile = profile;
+      console.log(profile);
+
     });
 
     this.profileService.getProfile().subscribe((repos: any) =>{
       console.log(repos);
       this.repos = repos;
-    });
+     });
   }
 
   ngOnInit(): void {
+    this.profileService.getProfile().subscribe(
+      data => {this.profile = data
+      console.log(this.profile)
+      }
+    )
   }
 
 }

@@ -1,5 +1,12 @@
-export class User {
-    constructor(private username:string,){
+export interface UserInterface{
+  
+  login: string;
+  blog: string;
+  avatar_url: string;
+  location: string;
+  company: string;
+  followers: string;
+  following: string;
 
-    }
-  }
+
+}
