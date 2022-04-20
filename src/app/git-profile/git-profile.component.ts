@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../service/profile.service';
+<<<<<<< HEAD
 //import {Repos} from '../repo';
 //import {user} from '../user';
 
 
+=======
+>>>>>>> a27ba8649a269cfd88e55e4dfb39be11d7e8ab19
 
 @Component({
   selector: 'app-git-profile',
