@@ -4,8 +4,8 @@
      <div class="d-flex h-100 text-center text-white bg-dark">
         <div class="cover-container d-flex w-100 h-100 p-5 mx-auto flex-column">
                   
-          <main class="p-3">
-            <div class="col mx-auto">
+          <main class="row py-lg-5">
+            <div class="col-md-8 mx-auto mb-3">
                 <a href="/github-main" routerLink="/github-main" class="d-flex align-middle mx-5 mb-lg-0 text-white text-center text-decoration-none">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-github align-middle" viewBox="0 0 16 16">
                       <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
@@ -15,18 +15,13 @@
             <h1>Enter your GitHub Username.</h1>
             <p class="lead"> Enter your GitHub Username to view your GitHub Repositories.</p>
             <div class="grid">
-                  <div class="g-col-6 g-col-md-4 px-5 w-50">
-                    <div>
-                        <form form action="" (ngSubmit)="findprofile()" class="search-form" autocomplete="off"> 
-                          <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
-                          <div class="input-group">
-                            
-                            <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Please Enter your GitHub Username" autocomplete="off">
-                            <button  class="input-group-text btn btn-lg btn-success fw-bold border-white bg-secondary" type="submit">@</button>
-                          </div>
-                        </form>            
-                    </div>
-                </div>
+                    <div class="col-md-8 mx-auto">
+                        <form action="" (ngSubmit)="findprofile()" class="search-form" autocomplete="off">
+                            <div class="formgroup">
+                                <input type="text" class="form-control" placeholder="Search git users with github" [(ngModel)] = "username" name="username" (keyup)="findprofile()">
+                            </div>
+                        </form>
+                    </div>                    
               </div>          
          </main>
         </div>
@@ -34,60 +29,41 @@
      </div>    
         
  </section>
+
+ <section>
+    <div class="card mb-3 w-80 m-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ profile.avatar_url }}" alt="Github avatar">
+          </div>
+          <div class="col-md-8 px-5">
+            <div class="card-body">
+               <div class="bg-light">
+                <p>
+                    <span class="badge bg-success">{{ profile.followers}} Followers</span>
+                    <span class="badge bg-warning mx-2">{{ profile.following}} Following</span>
+                    <span class="badge bg-info mx-2">{{ profile.public_gists}} public_gists</span>
+                    <span class="badge bg-secondary mx-2">{{ profile.public_repos}} Public Repos</span>
+                </p>
+               </div>
+              <h5 class="fs-3 card-title">{{ profile.name }} <br> <small>username: <span class="badge bg-success mt-2 p-2">{{ profile.login}}</span></small></h5>
+              <p class="card-text">
+                <ul class="list-group">
+                    <li class="list-group" *ngIf="profile.bio">{{ profile.bio }}</li>
+                    <li class="list-group" *ngIf="profile.hireable">Available for hire</li>
+                    <li class="list-group" *ngIf="profile.blog"><a href="{{ profile.blog }}" target="_blank">{{ profile.blog }}</a></li>
+                    <li class="list-group" *ngIf="profile.email"><a href="emailto:{{ profile.email }}">{{ profile.email }}</a></li>
+                </ul>
+                <p><a href="{{ profile.html_url }}" target="_blank" class="btn btn-success btn-sm mt-5">View Profile on GitHub</a></p>
+              <p class="card-text mt-5"><small class="text-muted">Last updated {{ profile.updated_at }}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+ </section>
  
- <!-- <section>
-    <div class="col-md-6 offset-md-5">
-        <form action="" (ngSubmit)="findprofile()" class="search-form" autocomplete="off">
-            <div class="formgroup">
-                <input type="text" class="form-control" placeholder="Search git users with github" [(ngModel)] = "username" name="username" (keyup)="findprofile()">
-            </div>
-        </form>
-    </div>
-    
- </section> 
 
-<section>
-     <div class="container-fluid">
-        <div class="col-lg-4 m-5 p-5 fs-3 text-white bg-dark">
-        <div *ngIf="profile">
 
-            <h2>works!</h2> 
-            <p>git-profile works!</p>
-            {{ profile.name }} <small>{{ profile.login}}</small>
-            <span *ngIf="profile.company">, Works at {{ profile.company }}</span> {{ profile.location }}
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-sm-3">
-                    <img src="{{ profile.avatar_url }}" class="img-circle img-responsive" alt="profile Image">
-
-                </div>
-                <div class="col-sm-5"> 
-                    <ul class="list-group">
-                        <li class="list-group" *ngIf="profile.bio">{{ profile.bio }}</li>
-                        <li class="list-group" *ngIf="profile.hireable">Available for hire</li>
-                        <li class="list-group" *ngIf="profile.blog"><a href="{{ profile.blog }}" target="_blank">{{ profile.blog }}</a></li>
-                        <li class="list-group" *ngIf="profile.email"><a href="emailto:{{ profile.email }}">{{ profile.email }}</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <p>
-                        <span class="label label-default">{{ profile.followers}} Followers</span>
-                        <span class="label label-secondary">{{ profile.following}} Following</span>
-                        <span class="label label-danger">{{ profile.public_gists}} public_gists</span>
-                        <span class="label label-primary">{{ profile.public_repos}} Public Repos</span>
-                    </p>
-                    <p><a href="{{ profile.html_url }}" target="_blank" class="btn btn-success btn-sm">View Profile on GitHub</a></p>
-
-                   
-                </div>
-            </div>
-
-        </div>
-
-        </div>
-    </div>
-</section>
 
 <section>
     <div class="panel panel-default">
@@ -106,9 +82,35 @@
     </div>
 </section>
 
+
 <section>
-    <footer class="mt-auto text-white-50">
+    <div class="album py-5 bg-light">
+        <div class="container">
+    
+          <div class="row row-cols-1 row-cols-sm-2 g-">
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+    
+                <div class="card-body">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+            </div>
+</section>
+
+ <section>
+    <footer class="mt-5 p-5 bg-dark text-center text-white-50">
         <p>About the Developer <a href="https://linktr.ee/themaryanjuguna" class="text-white">Maryanne Njuguna</a>, by <a href="https://twitter.com/themaryanjuguna" class="text-white">themaryanjuguna</a>.</p>
     </footer>
-    </div>    
-</section>   -->
+</section>  

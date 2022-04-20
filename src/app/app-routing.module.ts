@@ -8,7 +8,7 @@ import { GitProfileComponent } from './git-profile/git-profile.component';
 const routes: Routes = [
   { path: 'git-profile', component: GitProfileComponent  },
   { path:'**', component:NotFoundComponent},
-  { path: '', redirectTo:"/github-profile", pathMatch:"full"},
+  { path: '', redirectTo:"/git-profile", pathMatch:"full"},
 ];
 
 @NgModule({

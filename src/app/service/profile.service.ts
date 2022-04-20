@@ -30,8 +30,11 @@ export class ProfileService {
     return this.http.get<UserInterface>(searchUrl,searchOptions);
   }
 
-  getRepos(){
-    return this.http.get("https://api.github.com/" + this.username);
+  getRepos(): Observable<UserInterface> {
+    let headers = new HttpHeaders({ 'Authorization': 'token' + environment.GITHUB_ACCESS_TOKEN });
+    let searchUrl = environment.GITHUB_API_URL + this.username + `repos`
+    let searchOptions = { headers: headers };
+    return this.http.get<UserInterface>(searchUrl,searchOptions);
    }
 
   updateProfile(name: string) {

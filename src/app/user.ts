@@ -7,6 +7,7 @@ export interface UserInterface{
   company: string;
   followers: string;
   following: string;
+  updated_at: Date;
 
 
 }
