@@ -48,8 +48,13 @@ export class GitProfileComponent implements OnInit {
     this.profileService.getProfile().subscribe(
       data => {this.profile = data
       console.log(this.profile)
+      }       
+    )
 
-      }
+    this.profileService.getRepos().subscribe(
+      data => {this.repos= data
+      console.log(this.repos)
+       }
     )
   }
 

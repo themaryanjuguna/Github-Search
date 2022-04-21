@@ -10,9 +10,8 @@ import { RepoInterface } from '../repo';
 export class ProfileService {
 
   username = 'themaryanjuguna';
-  ExistingRepos: any;
-  searchRepo = "gitsearch" 
-  REPO_URL = `https://api.github.com/search/repositories?q=`;
+  repos!: string;
+  
 
 
 
@@ -41,10 +40,7 @@ export class ProfileService {
     let searchOptions = { headers: headers };
     return this.http.get<RepoInterface>(searchUrl,searchOptions);
    }
-   UpdateRepos(): Observable<RepoInterface>{
-    return this.http.get<RepoInterface>(this.REPO_URL + this.searchRepo + "");
-  
-    }
+   
  
    updateProfile(name: string) {
     this.username = name;
@@ -53,7 +49,7 @@ export class ProfileService {
 
 
   updateRepo (repoName: string) {
-    this.searchRepo = repoName;
+    this.repos = repoName;
 
 
   }
