@@ -2,13 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { UserInterface } from '../user'
+import { UserInterface } from '../user';
+import { RepoInterface } from '../repo';
 
 
 @Injectable({ providedIn: 'root' })
 export class ProfileService {
 
   username = 'themaryanjuguna';
+  ExistingRepos: any;
+  searchRepo = "gitsearch" 
+  REPO_URL = `https://api.github.com/search/repositories?q=`;
+
 
 
   constructor(private http: HttpClient) {
@@ -30,16 +35,28 @@ export class ProfileService {
     return this.http.get<UserInterface>(searchUrl,searchOptions);
   }
 
-  getRepos(): Observable<UserInterface> {
+  getRepos(): Observable<RepoInterface> {
     let headers = new HttpHeaders({ 'Authorization': 'token' + environment.GITHUB_ACCESS_TOKEN });
-    let searchUrl = environment.GITHUB_API_URL + this.username + `repos`
+    let searchUrl = environment.GITHUB_API_URL + this.username + "/repos";
     let searchOptions = { headers: headers };
-    return this.http.get<UserInterface>(searchUrl,searchOptions);
+    return this.http.get<RepoInterface>(searchUrl,searchOptions);
    }
-
-  updateProfile(name: string) {
+   UpdateRepos(): Observable<RepoInterface>{
+    return this.http.get<RepoInterface>(this.REPO_URL + this.searchRepo + "");
+  
+    }
+ 
+   updateProfile(name: string) {
     this.username = name;
 
   }
+
+
+  updateRepo (repoName: string) {
+    this.searchRepo = repoName;
+
+
+  }
+  
 
 }
