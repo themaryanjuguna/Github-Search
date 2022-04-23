@@ -23,7 +23,7 @@ public class CaesarCipher {
 
     }
 
-    public static String encoding(String cipherText, int Key) {
+    public static String decoding(String cipherText, int Key) {
         cipherText = cipherText.toLowerCase();
         String plainText = "";
         //looping process generating indexes
