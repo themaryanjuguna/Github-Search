@@ -12,6 +12,7 @@ public class CaesarCipher {
             int charIndex = alphabet.indexOf(plainText.charAt(i));
             //generate a new index. key shift value
             int newIndex = (charIndex + Key) % 26;
+            // generate cipher characters
             Char cipherChar = alphabet.charAt(newIndex);
 
         }
