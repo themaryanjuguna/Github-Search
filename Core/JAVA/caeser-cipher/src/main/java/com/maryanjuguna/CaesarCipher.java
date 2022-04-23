@@ -1,5 +1,7 @@
 package com.maryanjuguna;
 
+import com.sun.org.apache.xpath.internal.objects.XString;
+
 public class CaesarCipher {
 
     static String alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -21,10 +23,16 @@ public class CaesarCipher {
 
     }
 
-    public static String encoding() {
+    public static String encoding(String cypherText, int Key) {
+        cipherText = cypherText.toLowerCase();
+        String plainText = "";
+        //looping process generating indexes
+        for (int i =0 ; i<cipherText.length(); i++) {
 
+        }
+
+
+        return plainText;
     }
-
-
 
 }
