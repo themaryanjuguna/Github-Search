@@ -23,11 +23,17 @@ public class CaesarCipher {
 
     }
 
-    public static String encoding(String cypherText, int Key) {
-        cipherText = cypherText.toLowerCase();
+    public static String encoding(String cipherText, int Key) {
+        cipherText = cipherText.toLowerCase();
         String plainText = "";
         //looping process generating indexes
         for (int i =0 ; i<cipherText.length(); i++) {
+            int charIndex = alphabet.indexOf(cipherText.charAt(i));
+            //generate new index in the plain text
+            int newIndex = (charIndex - Key) % 26;
+            if (newIndex <0){
+                newIndex =alphabet.length() + newIndex;
+            }
 
         }
 
