@@ -15,7 +15,7 @@ public class CaesarCipher {
             //generate a new index. key shift value
             int newIndex = (charIndex + Key) % 26;
             // generate cipher characters
-            Char cipherChar = alphabet.charAt(newIndex);
+            char cipherChar = alphabet.charAt(newIndex);
             cipherText = cipherText + cipherChar;
         }
 
@@ -34,6 +34,7 @@ public class CaesarCipher {
             if (newIndex <0){
                 newIndex =alphabet.length() + newIndex;
             }
+            char plainChar = alphabet.charAt(newIndex);
 
         }
 
