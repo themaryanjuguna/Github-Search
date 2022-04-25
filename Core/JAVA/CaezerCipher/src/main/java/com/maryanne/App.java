@@ -1,10 +1,12 @@
 /*
+
 package com.maryanne;
 
 import java.util.Scanner;
-import
 
 public class App {
+
+    public static String alphabet = "abcdefghijklmnopqrstuvwxyz";
 
     public static void main (String[] args) {
         Scanner scan = new Scanner (System.in);
@@ -23,5 +25,4 @@ public class App {
     }
 
 
-}
-*/
+}*/

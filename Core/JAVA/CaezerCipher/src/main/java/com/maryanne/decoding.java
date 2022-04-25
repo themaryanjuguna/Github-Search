@@ -1,8 +1,7 @@
 package com.maryanne;
 
-import static com.maryanne.encoding.CaesarCipher.alphabet;
-
 public class decoding {
+    public static String alphabet = "abcdefghijklmnopqrstuvwxyz";
 
     public static String decoding(String cipherText, int Key) {
         cipherText = cipherText.toLowerCase();

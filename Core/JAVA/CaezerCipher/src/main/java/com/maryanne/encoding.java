@@ -1,9 +1,6 @@
 package com.maryanne;
 
 public class encoding {
-
-    public static class CaesarCipher {
-
     public static String alphabet = "abcdefghijklmnopqrstuvwxyz";
 
         public static String encoding(String plainText, int Key) {
@@ -26,6 +23,3 @@ public class encoding {
 
     }
 
-
-
-}
