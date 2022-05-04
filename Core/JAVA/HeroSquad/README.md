@@ -1,4 +1,4 @@
-# Hero Squad
+# Shujaa Squad
 A Java app that allows you to recruit a well-balanced team of superheroes.
 
 ## User Stories
